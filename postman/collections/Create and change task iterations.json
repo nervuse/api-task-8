@@ -17,7 +17,8 @@
 							"let jsonData = pm.response.json();",
 							"pm.environment.set('token', jsonData.id_token)"
 						],
-						"type": "text/javascript"
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
@@ -91,7 +92,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"username\":\"{{adminLogin}}\",\"password\":\"{{adminPassword}}\",\"rememberMe\":false}"
+					"raw": "{\n    \"username\": \"{{adminLogin}}\",\n    \"password\": \"{{adminPassword}}\",\n    \"rememberMe\": false\n}"
 				},
 				"url": {
 					"raw": "{{baseUrl}}/authenticate",
@@ -323,12 +324,18 @@
 							"    });",
 							"})",
 							"",
+							"pm.environment.unset('lastID')",
+							"pm.environment.unset('token')",
+							"pm.environment.unset('currentAmountOfTasks')",
+							"pm.environment.unset('targetNumberOfTasks')",
+							"pm.environment.unset('ids')",
 							"",
 							"",
 							"",
 							""
 						],
-						"type": "text/javascript"
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
